@@ -57,7 +57,7 @@ if not p.exists():
     with os.fdopen(fd, 'w') as f:
         f.write(secrets.token_urlsafe(32))
 PYCODE
-sudo cpdeploy/snaplink.servicedeploy/snaplink-slides.service /etc/systemd/system/
+sudo cp deploy/snaplink.service deploy/snaplink-slides.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable --now snaplink snaplink-slides
 ```
@@ -110,3 +110,9 @@ git push -u origin main
 ```
 
 원격 저장소가 이미 파일을 가진 경우 먼저 해당 저장소를 가져와 변경을 적용하세요. 강제 푸시는 사용하지 않습니다.
+
+## 공동 참여자
+
+- [sseuniiill-dot](https://github.com/sseuniiill-dot)
+- [GiveMeKite](https://github.com/GiveMeKite)
+- [MrDoLab](https://github.com/MrDoLab)
