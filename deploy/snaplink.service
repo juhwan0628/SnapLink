@@ -1,0 +1,17 @@
+[Unit]
+Description=SnapLink application
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/workspace/02_hackathon/snaplink-app
+Environment=PORT=8765
+Environment=MEMORY_DATA_DIR=/var/lib/snaplink-app
+ExecStart=/home/ubuntu/workspace/02_hackathon/.venv/bin/python /home/ubuntu/workspace/02_hackathon/snaplink-app/server.py
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

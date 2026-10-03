@@ -100,12 +100,12 @@ cd ..
 
 ## GitHub에 올리기
 
-`.env`, 편집 키, 업로드 사진, SQLite, 가상환경은 `.gitignore`로 제외합니다. 실제 API 키나 편집 링크를 커밋하지 마세요. 저장소 주소가 정해지면 다음 순서로 게시합니다.
+`.env`, 편집 키, 업로드 사진, SQLite, 가상환경은 `.gitignore`로 제외합니다. 실제 API 키나 편집 링크를 커밋하지 마세요. 저장소는 https://github.com/juhwan0628/SnapLink 입니다. 다음 순서로 게시합니다.
 
 ```sh
 git add .
 git commit -m "Prepare SnapLink app and slides for deployment"
-git remote add origin <GITHUB_REPOSITORY_URL>
+git remote add origin https://github.com/juhwan0628/SnapLink.git
 git push -u origin main
 ```
 

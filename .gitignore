@@ -1,0 +1,26 @@
+# Local secrets (keep only the documented empty example)
+.env
+.env.*
+!**/.env.example
+*.key
+*.pem
+secrets/
+
+# Runtime data and uploads
+**/data/
+**/media/
+**/assets.json
+**/upload.key
+*.sqlite*
+*.db
+
+# Local environments and generated files
+.venv/
+**/.venv/
+**/__pycache__/
+*.pyc
+*.log
+.DS_Store
+.pytest_cache/
+work/
+.playwright-cli/
