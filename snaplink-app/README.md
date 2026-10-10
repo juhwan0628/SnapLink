@@ -64,6 +64,6 @@ node --check static/app.js
 ## 운영 링크와 통합 배포
 
 - [서비스](https://juhwan.ing/snaplink/)
-- [발표 슬라이드](https://juhwan.ing/slides/)
+- [발표 슬라이드](https://juhwan.ing/snaplink-slides/)
 
 발표와 서비스는 하나의 저장소에서 관리합니다. 환경 변수 예시는 [.env.example](.env.example), 통합 서버 배포 방법은 [최상위 README](../README.md)를 확인하세요. 실데이터·API 키는 저장소에 포함하지 않습니다. 현재는 계정 인증이 없는 해커톤 시연용 MVP입니다.
