@@ -162,7 +162,7 @@ const assetsReady=(async()=>{
 })();
 document.querySelectorAll('.asset').forEach(slot=>slot.onclick=()=>{
  if(busy)return;
- if(location.protocol==='file:'){alert('이미지 업로드는 juhwan.ing/slides 웹페이지에서 해주세요.');return;}
+ if(location.protocol==='file:'){alert('이미지 업로드는 juhwan.ing/snaplink-slides 웹페이지에서 해주세요.');return;}
  if(!sessionStorage.getItem('slides-edit-key')){alert('이미지를 변경하려면 이미지 편집 링크에서 열어주세요.');return;}
  assetKey=slot.dataset.asset;assetInput.value='';assetInput.click();
 });
