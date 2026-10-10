@@ -47,14 +47,14 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
     def do_GET(self):
-        if urlsplit(self.path).path != '/slides/api/assets':
+        if urlsplit(self.path).path != '/snaplink-slides/api/assets':
             return self.reply(404, {'error':'없는 주소입니다.'})
         with LOCK:
             self.reply(200, assets())
 
     def do_POST(self):
-        key = urlsplit(self.path).path.removeprefix('/slides/api/assets/')
-        if key not in KEYS or not self.path.startswith('/slides/api/assets/'):
+        key = urlsplit(self.path).path.removeprefix('/snaplink-slides/api/assets/')
+        if key not in KEYS or not self.path.startswith('/snaplink-slides/api/assets/'):
             return self.reply(404, {'error':'없는 이미지 자리입니다.'})
         expected = 'Bearer ' + (ROOT / 'upload.key').read_text().strip()
         if not hmac.compare_digest(self.headers.get('Authorization',''), expected):
@@ -84,7 +84,7 @@ class Handler(BaseHTTPRequestHandler):
             with LOCK:
                 atomic_write(ROOT / 'media' / filename, data)
                 saved = assets()
-                saved[key] = '/slides/media/' + filename
+                saved[key] = '/snaplink-slides/media/' + filename
                 atomic_write(ROOT / 'assets.json', json.dumps(saved).encode())
             self.reply(200, {'key':key,'url':saved[key]})
         except (OSError, ValueError, Image.DecompressionBombError, Image.DecompressionBombWarning):
