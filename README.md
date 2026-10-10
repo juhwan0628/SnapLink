@@ -41,7 +41,7 @@ cp snaplink-app/.env.example snaplink-app/.env
 chmod 600 snaplink-app/.env
 sudo install -d -o ubuntu -g ubuntu /var/lib/snaplink-app
 sudo install -d -o ubuntu -g ubuntu /var/lib/snaplink-slides/media
-sudo install -d /var/www/html/slides
+sudo install -d /var/www/html/snaplink-slides
 sudo install -m 644 slides/index.html /var/www/html/snaplink-slides/index.html
 ```
 
