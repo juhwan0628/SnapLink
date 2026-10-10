@@ -145,7 +145,7 @@ addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey)return;const on
 
 
 const assetInput=document.querySelector('#asset-input');
-const assetApi='/slides/api/assets';
+const assetApi='/snaplink-slides/api/assets';
 function rememberEditKey(){const key=new URLSearchParams(location.hash.slice(1)).get('edit');if(key)sessionStorage.setItem('slides-edit-key',key);const hint=document.querySelector('.hint');if(hint&&sessionStorage.getItem('slides-edit-key'))hint.textContent='이미지 편집 중 · 이미지 영역을 눌러 업로드';}
 function pageFromHash(){const hash=location.hash.slice(1);return (Number(new URLSearchParams(hash).get('page')||hash)||1)-1;}
 rememberEditKey();
