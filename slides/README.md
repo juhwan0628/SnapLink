@@ -2,7 +2,7 @@
 
 1280×720, 16:9 캔버스를 유지하는 단일 HTML 발표입니다. 첫 페이지는 서비스 화면 두 장을 배치하며 전체는 10페이지입니다.
 
-- [발표 링크](https://juhwan.ing/slides/)
+- [발표 링크](https://juhwan.ing/snaplink-slides/)
 - `index.html`: 슬라이드, 키보드 이동, 발표 메모, 전체화면
 - `slides_asset_server.py`: 인증된 이미지 업로드와 저장
 - `check_asset_server.py`: 인증·파일 검증·영구 저장 확인
