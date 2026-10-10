@@ -2,7 +2,7 @@
 
 사진 속 함께한 경험을 그룹별로 기록하고 다음 활동과 실제 장소 코스를 추천하는 해커톤 MVP입니다. 실제 서비스와 10장짜리 발표 슬라이드를 하나의 저장소에서 관리합니다.
 
-- [발표 슬라이드](https://juhwan.ing/slides/)
+- [발표 슬라이드](https://juhwan.ing/snaplink-slides/)
 
 ## 구조
 
@@ -42,7 +42,7 @@ chmod 600 snaplink-app/.env
 sudo install -d -o ubuntu -g ubuntu /var/lib/snaplink-app
 sudo install -d -o ubuntu -g ubuntu /var/lib/snaplink-slides/media
 sudo install -d /var/www/html/slides
-sudo install -m 644 slides/index.html /var/www/html/slides/index.html
+sudo install -m 644 slides/index.html /var/www/html/snaplink-slides/index.html
 ```
 
 최초 설치 때만 편집 키를 생성합니다. 재배포 시 기존 키와 데이터를 유지합니다.
@@ -70,9 +70,9 @@ sudo systemctl reload nginx
 ```
 
 - 서비스: `/snaplink/` → 내부 서버 `127.0.0.1:8765`
-- 슬라이드: `/slides/` → HTML 파일
-- 이미지 API: `/slides/api/` → 내부 서버 `127.0.0.1:8766`
-- 업로드 이미지: `/slides/media/` → 서버 파일
+- 슬라이드: `/snaplink-slides/` → HTML 파일
+- 이미지 API: `/snaplink-slides/api/` → 내부 서버 `127.0.0.1:8766`
+- 업로드 이미지: `/snaplink-slides/media/` → 서버 파일
 
 슬라이드 업로드 서버의 허용 Origin은 현재 `juhwan.ing`과 `www.juhwan.ing`입니다. 다른 도메인으로 옮길 때 `slides/slides_asset_server.py`의 Origin 목록을 함께 변경하세요. **GitHub Pages만으로는 Python 서버 및 이미지 업로드를 실행할 수 없습니다.** GitHub에는 소스를 관리하고 웹 실행은 위 서버에서 합니다.
 
@@ -81,7 +81,7 @@ sudo systemctl reload nginx
 서버의 `upload.key` 값을 사용해 다음 주소를 본인 브라우저에서 엽니다. 아래 `YOUR_KEY`는 실제 값으로 바꾸며 편집 링크는 공개 README나 이슈에 남기지 않습니다.
 
 ```text
-https://juhwan.ing/slides/#edit=YOUR_KEY&page=1
+https://juhwan.ing/snaplink-slides/#edit=YOUR_KEY&page=1
 ```
 
 이미지 영역을 누르면 PNG·JPG·WebP를 최대 25MB까지 업로드할 수 있습니다. 이미지는 서버에 저장되며 새로고침하거나 다른 기기에서 발표를 열어도 유지됩니다. 같은 이미지 자리를 쓰는 슬라이드는 함께 갱신됩니다. 일반 발표 링크는 업로드 권한이 없습니다.
